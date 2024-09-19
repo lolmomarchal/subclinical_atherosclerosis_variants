@@ -114,7 +114,7 @@ def get_normal_alt_regions(df: pd.DataFrame):
         # print(f"ALT {alt}")
         # print(replace_valid_instance(region, ref, alt))
         df.loc[i, "region_alt"] = replace_valid_instance(region, ref, alt)
-      return df
+  return df
 def cpg_var(df):
   for i, row in df.iterrows():
     count_ref = row["region_normal"].count("CG")
@@ -126,7 +126,7 @@ def cpg_var(df):
     else:
         df.loc[i, "CpG_variant"] = "no"
     df.loc[i, "CpG_site_diff"] = count_alt - count_ref
-    return df
+  return df
         
 
 def get_args():
@@ -150,4 +150,3 @@ def main(input_file, reference, output_file=None):
 if __name__ == "__main__":
     args = get_args()
     main(args.input_file, args.reference, args.output_file)
-
